@@ -2,7 +2,7 @@
 <interface>
   <requires lib="gtk+" version="2.16"/>
   <!-- interface-naming-policy project-wide -->
-  <object class="GtkWindow" id="window1">
+  <object class="GtkWindow" id="win_youtubedl">
     <child>
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
@@ -28,7 +28,7 @@
             <child type="label">
               <object class="GtkLabel" id="label1">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">&lt;b&gt;Indirizzo youtube&lt;/b&gt;</property>
+                <property name="label" translatable="yes">&lt;b&gt;YouTube address&lt;/b&gt;</property>
                 <property name="use_markup">True</property>
               </object>
             </child>
@@ -70,11 +70,13 @@
           <object class="GtkHButtonBox" id="hbuttonbox1">
             <property name="visible">True</property>
             <child>
-              <object class="GtkButton" id="button1">
-                <property name="label" translatable="yes">button</property>
+              <object class="GtkButton" id="btn_download">
+                <property name="label">gtk-media-record</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_btn_download_clicked"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -83,11 +85,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button2">
-                <property name="label" translatable="yes">button</property>
+              <object class="GtkButton" id="btn_save">
+                <property name="label">gtk-save</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_btn_save_clicked"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -96,11 +100,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button3">
-                <property name="label" translatable="yes">button</property>
+              <object class="GtkButton" id="btn_exit">
+                <property name="label">gtk-quit</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_btn_exit_clicked"/>
               </object>
               <packing>
                 <property name="expand">False</property>
