@@ -8,6 +8,7 @@ class GtkYouTube:
         builder = gtk.Builder()
         builder.add_from_file('data/gtk-youtube-dl.ui')
         self.win_youtubedl = builder.get_object('win_youtubedl')
+        self.txt_url = builder.get_object('txt_url')
         builder.connect_signals(self)
 
     def show(self):
@@ -17,10 +18,13 @@ class GtkYouTube:
         gtk.main_quit()
 
     def on_btn_download_clicked(self, widget):
-        pass
+        url = self.txt_url.get_text()
+        cmd = 'youtube-dl %s' % url
+        popen2.popen2(cmd)
 
     def on_btn_save_clicked(self, widget):
-        pass
+        cmd = 'mplayer -dumpaudio -dumpfile %s %s' % (mp3file, flvfile)
+        popen2.popen2(cmd)
 
 if __name__ == '__main__':
     gui = GtkYouTube()
