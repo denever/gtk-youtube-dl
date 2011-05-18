@@ -21,6 +21,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="invisible_char">&#x2022;</property>
+                    <signal name="changed" handler="on_txt_url_changed"/>
                   </object>
                 </child>
               </object>
@@ -47,9 +48,10 @@
                 <property name="visible">True</property>
                 <property name="left_padding">12</property>
                 <child>
-                  <object class="GtkLabel" id="label4">
+                  <object class="GtkFileChooserWidget" id="chs_fileflv">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">label</property>
+                    <property name="orientation">vertical</property>
+                    <property name="action">save</property>
                   </object>
                 </child>
               </object>
@@ -80,6 +82,7 @@
                     <property name="visible">True</property>
                     <property name="orientation">vertical</property>
                     <property name="action">save</property>
+                    <signal name="selection_changed" handler="on_chs_filemp3_changed"/>
                   </object>
                 </child>
               </object>
@@ -103,6 +106,7 @@
               <object class="GtkButton" id="btn_download">
                 <property name="label">gtk-media-record</property>
                 <property name="visible">True</property>
+                <property name="sensitive">False</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
@@ -118,6 +122,7 @@
               <object class="GtkButton" id="btn_save">
                 <property name="label">gtk-save</property>
                 <property name="visible">True</property>
+                <property name="sensitive">False</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
